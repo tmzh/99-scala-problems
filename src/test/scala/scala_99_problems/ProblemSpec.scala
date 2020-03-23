@@ -35,4 +35,16 @@ class ProblemSpec extends FlatSpec with Matchers {
   it should "Eliminate consecutive duplicates of list elements" in {
     P08.compress(List('a', 'a', 'a', 'a', 'b', 'c', 'c', 'a', 'a', 'd','e', 'e', 'e', 'e')) shouldEqual List('a', 'b', 'c', 'a', 'd', 'e')
   }
+
+  it should "Pack consecutive duplicates of list elements into sublists" in {
+    P09.pack(List('a, 'a, 'a, 'a, 'b, 'c, 'c, 'a, 'a, 'd, 'e, 'e, 'e, 'e)) shouldEqual List(List('a, 'a, 'a, 'a), List('b), List('c, 'c), List('a, 'a), List('d), List('e, 'e, 'e, 'e))
+  }
+  
+  it should "Run-length encoding of a list" in {
+    P10.encode(List('a, 'a, 'a, 'a, 'b, 'c, 'c, 'a, 'a, 'd, 'e, 'e, 'e, 'e)) shouldEqual List((4,'a), (1,'b), (2,'c), (2,'a), (1,'d), (4,'e))
+  }
+
+  it should "Modified run-length encoding" in {
+    P11.encodeModified(List('a, 'a, 'a, 'a, 'b, 'c, 'c, 'a, 'a, 'd, 'e, 'e, 'e, 'e)) shouldEqual List((4,'a), 'b, (2,'c), (2,'a), 'd, (4,'e))
+  }
 }
