@@ -76,4 +76,16 @@ class ProblemSpec extends FlatSpec with Matchers {
     P18.slice(3, 7, List('a, 'b, 'c, 'd, 'e, 'f, 'g, 'h, 'i, 'j, 'k)) shouldEqual List('d, 'e, 'f, 'g)
   }
 
+  it should "Rotate a list N places to the left" in {
+    P19.rotate(3, List('a, 'b, 'c, 'd, 'e, 'f, 'g, 'h, 'i, 'j, 'k)) shouldEqual List('d, 'e, 'f, 'g, 'h, 'i, 'j, 'k, 'a, 'b, 'c)
+  }
+
+  it should "Remove the Kth element from a list" in {
+    P20.removeAt(1, List('a, 'b, 'c, 'd)) shouldEqual (List('a, 'c, 'd),'b)
+  }
+
+  it should "Insert an element at a given position into a list" in {
+    P21.insertAt('new, 1, List('a, 'b, 'c, 'd)) shouldEqual List('a, 'new, 'b, 'c, 'd)
+  }
+
 }
