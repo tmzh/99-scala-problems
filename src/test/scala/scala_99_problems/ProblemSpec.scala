@@ -88,4 +88,19 @@ class ProblemSpec extends FlatSpec with Matchers {
     P21.insertAt('new, 1, List('a, 'b, 'c, 'd)) shouldEqual List('a, 'new, 'b, 'c, 'd)
   }
 
+  it should "Create a list containing all integers within a given range" in {
+    P22.range(4,9) shouldEqual List(4, 5, 6, 7, 8, 9)
+  }
+
+  it should "Extract a given number of randomly selected elements from a list" in {
+    P23.randomSelect(3, List('a, 'b, 'c, 'd, 'f, 'g, 'h)) should have length 3
+    P23.randomSelect(3, List('a, 'b, 'c, 'd, 'f, 'g, 'h)).toSet.size shouldEqual 3
+    P23.randomSelect(3, List('a, 'b, 'c, 'd, 'f, 'g, 'h)) should not equal P23.randomSelect(3, List('a, 'b, 'c, 'd, 'f, 'g, 'h))
+  }
+
+  it should "Lotto: Draw N different random numbers from the set 1..M." in {
+    P24.lotto(6, 49) should have length 6
+    P24.lotto(6, 49).toSet.size shouldEqual 6
+    P24.lotto(6, 49) should not equal P24.lotto(6,49)
+  }
 }
