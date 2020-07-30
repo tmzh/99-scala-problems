@@ -103,4 +103,16 @@ class ProblemSpec extends FlatSpec with Matchers {
     P24.lotto(6, 49).toSet.size shouldEqual 6
     P24.lotto(6, 49) should not equal P24.lotto(6,49)
   }
+
+  it should "Generate a random permutation of the elements of a list" in {
+    P25.randomPermute(List('a, 'b, 'c, 'd, 'e, 'f)) should have length 6
+  }
+
+  it should "Generate the combinations of K distinct objects chosen from the N elements of a list" in {
+    P26.combinations(3, List('a, 'b, 'c, 'd, 'e, 'f )) should have length 20
+  }
+
+   it should "Group the elements of a set into disjoint subsets" in {
+     P27.group(List(2, 2, 5), List("Aldo", "Beat", "Carla", "David", "Evi", "Flip", "Gary", "Hugo", "Ida")) should have length 756
+   }
 }

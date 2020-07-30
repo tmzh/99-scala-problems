@@ -1,3 +1,7 @@
 target/
 .metals/
 .bloop/
+/.bloop/
+/.idea/
+/.metals/
+/.vscode/
