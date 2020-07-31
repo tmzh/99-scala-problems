@@ -115,4 +115,15 @@ class ProblemSpec extends FlatSpec with Matchers {
    it should "Group the elements of a set into disjoint subsets" in {
      P27.group(List(2, 2, 5), List("Aldo", "Beat", "Carla", "David", "Evi", "Flip", "Gary", "Hugo", "Ida")) should have length 756
    }
+
+  it should "Sort a list of lists according to length of sublists" in {
+    P28.lsort(List(List('a, 'b, 'c), List('d, 'e), List('f, 'g, 'h), List('d, 'e), List('i, 'j, 'k, 'l), List('m, 'n), List('o))) shouldEqual List(List('o), List('d, 'e), List('d, 'e), List('m, 'n), List('a, 'b, 'c), List('f, 'g, 'h), List('i, 'j, 'k, 'l))
+  }
+
+  it should "Sort the elements according to their length frequency" in {
+    val lsorted = P28.lsortFreq(List(List('a, 'b, 'c), List('d, 'e), List('f, 'g, 'h), List('d, 'e), List('i, 'j, 'k, 'l), List('m, 'n), List('o)))
+    assert(List(List('i, 'j, 'k, 'l), List('o)).toSet === lsorted.take(2).toSet )
+    assert(List(List('a, 'b, 'c), List('f, 'g, 'h)).toSet === lsorted.slice(2, 4).toSet )
+    assert(List(List('d, 'e), List('d, 'e), List('m, 'n)).toSet == lsorted.takeRight(3).toSet )
+  }
 }
