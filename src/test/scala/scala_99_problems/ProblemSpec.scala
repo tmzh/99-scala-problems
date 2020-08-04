@@ -133,4 +133,18 @@ class ProblemSpec extends FlatSpec with Matchers {
     val eight = new P31(8)
     assert(!seven.isPrime)
   }
+
+  it should "Determine the greatest common divisor of two positive integer numbers" in {
+    P32.gcd(36, 63) shouldEqual 9
+  }
+
+  it should "Determine whether two positive integer numbers are coprime" in {
+    val thirtyFive = new P33(35)
+    assert(thirtyFive.isCoprimeTo(64))
+  }
+
+  it should "Calculate Euler's totient function phi(m)" in {
+    val ten = new P34(10)
+    ten.totient shouldEqual 4
+  }
 }
