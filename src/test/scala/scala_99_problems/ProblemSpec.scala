@@ -131,7 +131,7 @@ class ProblemSpec extends FlatSpec with Matchers {
     val seven = new P31(7)
     assert(seven.isPrime)
     val eight = new P31(8)
-    assert(!seven.isPrime)
+    assert(!eight.isPrime)
   }
 
   it should "Determine the greatest common divisor of two positive integer numbers" in {
