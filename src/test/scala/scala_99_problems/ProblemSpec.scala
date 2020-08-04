@@ -122,8 +122,15 @@ class ProblemSpec extends FlatSpec with Matchers {
 
   it should "Sort the elements according to their length frequency" in {
     val lsorted = P28.lsortFreq(List(List('a, 'b, 'c), List('d, 'e), List('f, 'g, 'h), List('d, 'e), List('i, 'j, 'k, 'l), List('m, 'n), List('o)))
-    assert(List(List('i, 'j, 'k, 'l), List('o)).toSet === lsorted.take(2).toSet )
-    assert(List(List('a, 'b, 'c), List('f, 'g, 'h)).toSet === lsorted.slice(2, 4).toSet )
-    assert(List(List('d, 'e), List('d, 'e), List('m, 'n)).toSet == lsorted.takeRight(3).toSet )
+    assert(List(List('i, 'j, 'k, 'l), List('o)).toSet === lsorted.take(2).toSet)
+    assert(List(List('a, 'b, 'c), List('f, 'g, 'h)).toSet === lsorted.slice(2, 4).toSet)
+    assert(List(List('d, 'e), List('d, 'e), List('m, 'n)).toSet == lsorted.takeRight(3).toSet)
+  }
+
+  it should "Determine whether a given integer number is prime" in {
+    val seven = new P31(7)
+    assert(seven.isPrime)
+    val eight = new P31(8)
+    assert(!seven.isPrime)
   }
 }
