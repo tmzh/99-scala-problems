@@ -128,9 +128,9 @@ class ProblemSpec extends FlatSpec with Matchers {
   }
 
   it should "Determine whether a given integer number is prime" in {
-    val seven = new P31(7)
+    val seven = P31(7)
     assert(seven.isPrime)
-    val eight = new P31(8)
+    val eight = P31(8)
     assert(!eight.isPrime)
   }
 
@@ -146,5 +146,10 @@ class ProblemSpec extends FlatSpec with Matchers {
   it should "Calculate Euler's totient function phi(m)" in {
     val ten = new P34(10)
     ten.totient shouldEqual 4
+  }
+
+  it should "Determine the prime factors of a given positive integer" in {
+    val num = new P35(315)
+    num.primeFactors shouldEqual List(3, 3, 5, 7)
   }
 }
