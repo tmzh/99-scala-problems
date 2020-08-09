@@ -152,4 +152,9 @@ class ProblemSpec extends FlatSpec with Matchers {
     val num = new P35(315)
     num.primeFactors shouldEqual List(3, 3, 5, 7)
   }
+
+  it should "Determine the prime factors with count of a given positive integer" in {
+    val num = new P36(315)
+    num.primeFactorMultiplicity shouldEqual Map(3 -> 2, 5 -> 1, 7 -> 1)
+  }
 }

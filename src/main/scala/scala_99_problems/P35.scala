@@ -6,7 +6,7 @@ case class P35(i: Int) {
   def sieve(s: Stream[Int]): Stream[Int] =
     s.head #:: sieve(s.tail.filter(_ % s.head != 0))
 
-  object primeFactors {
+  def primeFactors = {
     def primeFactorsR(i: Int, ps: Stream[Int]): List[Int] = {
       if (P31(i).isPrime) List(i)
       else if (i % ps.head == 0) ps.head :: primeFactorsR(i / ps.head, ps)
