@@ -157,4 +157,9 @@ class ProblemSpec extends FlatSpec with Matchers {
     val num = new P36(315)
     num.primeFactorMultiplicity shouldEqual Map(3 -> 2, 5 -> 1, 7 -> 1)
   }
+
+  it should "Calculate Euler's totient function phi(m) (improved)" in {
+    val ten = new P37(10)
+    ten.totient shouldEqual 4.0
+  }
 }
