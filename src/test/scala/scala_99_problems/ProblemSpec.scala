@@ -162,4 +162,5 @@ class ProblemSpec extends FlatSpec with Matchers {
     val ten = new P37(10)
     ten.totient shouldEqual 4.0
   }
+
 }
